@@ -9,41 +9,28 @@
 <body>
   <header>
     <h1>✨ ASCII Art Generator ✨</h1>
-    <p>Upload an image and transform it into ASCII art instantly.</p>
+    <p>Upload an image, and we’ll transform it into ASCII art instantly.</p>
   </header>
 
   <div class="panel">
     <div class="controls">
       <input type="file" id="fileInput" accept="image/*" />
-
       <label for="sizeRange">Font size: <span id="sizeVal">10</span>px</label>
       <input id="sizeRange" type="range" min="6" max="20" value="10" />
-
-      <label for="charsetInput">Charset:</label>
-      <input id="charsetInput" type="text" value="@%#*+=-:. " />
-
-      <label for="resRange">Resolution:</label>
-      <input id="resRange" type="range" min="1" max="5" value="1" />
-
-      <label for="fontSelect">Font:</label>
-      <select id="fontSelect">
-        <option value="Courier New">Courier New</option>
-        <option value="Fira Code">Fira Code</option>
-        <option value="JetBrains Mono">JetBrains Mono</option>
-      </select>
-
       <button id="toggleColorBtn" type="button">🎨 Color Mode: OFF</button>
       <button id="copyBtn" type="button">📋 Copy</button>
-      <button id="downloadBtn" type="button">💾 Download TXT</button>
-      <button id="saveImageBtn" type="button">🖼 Save PNG</button>
+      <button id="downloadBtn" type="button">💾 Download</button>
+    </div>
+
+    <!-- Show uploaded image -->
+    <div class="image-container">
+      <img id="uploadedImage" src="" alt="Uploaded Image" style="display:none;">
     </div>
 
     <div class="ascii-container">
       <pre class="ascii" id="asciiBlock">[Upload an image to see ASCII art here]</pre>
     </div>
   </div>
-
-  <div id="loader" style="display:none;">Processing...</div>
 
   <canvas id="hiddenCanvas" style="display:none;"></canvas>
 

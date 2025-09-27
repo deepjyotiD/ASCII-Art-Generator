@@ -63,15 +63,9 @@ header p {
   margin-bottom: 16px;
 }
 
-.controls input[type="file"],
-.controls input[type="text"],
-.controls select {
+.controls input[type="file"] {
   color: var(--text);
   font-size: 0.9rem;
-  background: rgba(255,255,255,0.1);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 4px 8px;
 }
 
 label {
@@ -103,6 +97,19 @@ button:active {
   transform: translateY(0);
 }
 
+.image-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.image-container img {
+  max-width: 100%;
+  max-height: 300px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
 .ascii-container {
   background: rgba(0, 0, 0, 0.75);
   border-radius: 12px;
@@ -126,12 +133,6 @@ pre.ascii span {
   font-family: var(--mono);
 }
 
-#loader {
-  margin-top: 10px;
-  font-size: 0.95rem;
-  color: var(--accent);
-}
-
 @media (max-width: 640px) {
   header h1 {
     font-size: 1.5rem;
@@ -142,8 +143,11 @@ pre.ascii span {
   .controls {
     gap: 6px;
   }
-  .controls input, .controls select, .controls button {
+  .controls input, .controls button {
     font-size: 0.8rem;
     padding: 4px 8px;
+  }
+  .image-container img {
+    max-height: 200px;
   }
 }
